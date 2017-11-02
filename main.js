@@ -2,7 +2,7 @@ var mobileViewport = window.matchMedia("screen and (max-width: 759px)");
 
 $('.scroll-icon').on('click', function() {
 	$('body,html').animate({
-		scrollTop: $('.about-us').offset().top
+		scrollTop: $('.about-us').offset().top - 100
 	}, 1000)
 })
 
@@ -56,8 +56,6 @@ $('.view-gallery').on('click', function() {
 	$('.view-gallery').toggleClass('clicked');
 	$('.medium-img:nth-of-type(3)').slideDown(500);
 	$('.medium-img:nth-of-type(4)').slideDown(500);
-	$('.medium-img:nth-of-type(3)').toggleClass('opened');
-	$('.medium-img:nth-of-type(4)').toggleClass('opened');
 });
 
 $('.view-gallery.less').on('click', function() {

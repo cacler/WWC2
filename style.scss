@@ -22,7 +22,6 @@ $white: #f9f8fb;
 
 html {
 	font-size: 10px;
-	width: 100vw;
 	overflow-x: hidden;
 }
 
@@ -133,26 +132,22 @@ li {
 	}
 }
 
-.menu-element1.checked,
-.menu-element2.checked,
-.menu-element3.checked,
-.menu-element4.checked,
-.menu-element5.checked,
-.menu-element6.checked {
-	a {
-		padding-top: 10px;
-		border-top: 3px solid $red;
-		outline: none;
+@for $i from 1 through 6 {
+	.menu-element#{$i}.checked {
+		a {
+			padding-top: 10px;
+			border-top: 3px solid $red;
+			outline: none;
+		}
 	}
 }
 
-.first-button {
+.getfree-button {
 	width: 175px;
 	height: 50px;
 	font-size: $button-font;
 	background-color: $red;
 	color: #ffffff;
-	outline: none;
 	border: 0;
 	cursor: pointer;
 	@include button-transition;
@@ -295,21 +290,16 @@ li {
 	width: 636px;
 }
 
-.medium-img:nth-of-type(3),
-.medium-img:nth-of-type(4) {
-	display: none;
-}
-
-.medium-img:nth-of-type(3).opened,
-.medium-img:nth-of-type(4).opened {
-	display: block;
+@for $i from 3 through 4 {
+	.medium-img:nth-of-type(#{$i}) {
+		display: none;
+	}
 }
 
 .view-gallery {
 	width: 175px;
 	height: 50px;
 	background-color: #5585a2;
-	outline: none;
 	border: 0;
 	color: #ffffff;
 	font-size: $button-font;
@@ -386,7 +376,6 @@ li {
 	background-color: #96b92c;
 	margin-left: 30px;
 	font-size: $button-font;
-	outline: none;
 	border: 0;
 	cursor: pointer;
 	@include button-transition;
@@ -452,7 +441,6 @@ li {
 	margin-bottom: 50px;
 	font-size: $button-font;
 	border: 0;
-	outline: 0;
 	cursor: pointer;
 	@include uppercase;
 	@include shadow;
@@ -660,7 +648,6 @@ form {
 	font-weight: 700;
 }
 
-
 @media only screen and (max-width: 1330px) {
 	.gallery {
 		.big-header {
@@ -679,8 +666,6 @@ form {
 		margin-bottom: 50px;
 	}
 }
-
-
 
 @media only screen and (max-width: 1180px) {
 	.page-header {
@@ -755,6 +740,7 @@ form {
 @media only screen and (max-width: 759px) {	
 	.page-header {
 		background-image: none;
+
 		.text-content {
 			left: 50%;
 			top: 50%;
@@ -802,6 +788,10 @@ form {
 		border-bottom: 4px solid $white;
 		z-index: 2;
 		position: absolute;
+	}
+
+	.navigation-menu {
+		width: 100vw;
 	}
 		
 	li {
